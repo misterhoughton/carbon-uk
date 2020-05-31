@@ -1,0 +1,9 @@
+.headlines {
+    font-size: 1.5em;
+    font-family: serif;
+    fill: #ccc;
+    p {
+        transform: rotate(-10deg);
+        margin: 0 0 .25em 0;
+    }
+}

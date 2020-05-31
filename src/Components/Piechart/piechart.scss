@@ -1,0 +1,57 @@
+.piechart {
+  fill: none;
+  .pie {
+    stroke: #f461ab;
+    stroke-width: 1;
+    fill: #f8e4ee;
+  }
+  .slice-line {
+    stroke:#f461ab;
+    stroke-width: .25;
+  }
+  .label {
+    text-anchor: middle;
+    font-size: .25rem;
+    fill: #f461ab;
+    background-color: #fff;
+    &:before {
+      content: "$$$",
+    }
+  }
+  .label-mask {
+    fill: #000;
+    stroke: #000;
+    stroke-width: 1.5;
+  }
+  .label-line {
+    stroke: #f461ab;
+    stroke-width: .15;
+  }
+  .biomass {
+    stroke: #f0871e;
+  }
+  .coal {
+    stroke: #f13493;
+  }
+  .imports {
+    stroke: #f461ab;
+  }
+  .gas {
+    stroke: #f9a5cf;
+  }
+  .nuclear {
+    stroke:#f78ec3;
+  }
+  .other {
+    stroke: #fabbdb;
+  }
+  .hydro {
+    stroke: #c0186c;
+  }
+  .solar {
+    stroke: #d81b79;
+  }
+  .wind {
+    stroke: #125190;
+  }
+}

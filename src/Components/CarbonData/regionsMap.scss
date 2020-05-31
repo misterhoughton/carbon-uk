@@ -1,0 +1,34 @@
+.regionMap {
+    z-index: 1;
+    .region {
+        stroke: #fff;
+        opacity: .75;
+        &:hover {
+            z-index: 10;
+            fill: #ebf4fd;
+        }
+        &:active {
+            fill: pink;
+        }
+    }
+    .no-data {
+        fill: #fff;
+        opacity: .75;
+    }
+    .very-low{
+        fill: #d2e7fc;
+    }
+    .low{
+        fill:#a5cff9;
+    }
+    .moderate{
+        fill: #78b7f6;
+    }
+    .high{
+        fill: 
+        #4a9ff3;
+    }
+    .very-high{
+        fill: #1e87f0;
+    }
+}
