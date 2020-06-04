@@ -3,7 +3,7 @@ import moment from 'moment';
 // eslint-disable-next-line no-unused-vars
 import UIkit from 'uikit';
 
-import Alert from './Components/Alert';
+import Alert from './Components/Alert/Alert';
 import ApiClient from './Api/ApiClient';
 import RegionsMap from './Components/CarbonData/RegionsMap';
 import Slider from './Components/Slider.js';
