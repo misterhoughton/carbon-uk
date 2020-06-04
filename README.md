@@ -4,9 +4,15 @@ An SVG data visualisation experiment using data from [National Grid ESO's Carbon
 
 Work in progress. Interactive SVG Map displaying UK regional carbon intensity data throughout Lockdown 2020. 
 
-Built with [React](https://reactjs.org/) and [UIKit](https://getuikit.com/).
+Built with [React](https://reactjs.org/) and [UIKit](https://getuikit.com/). Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## API Keys
+
+To run this project, you'll need to obtain an API key from [The Guardian Open Platform](https://open-platform.theguardian.com/). Create a JSON file: `src/Api/ApiKeys.json` which contains the following:
+    
+    {
+    "GUARDIAN_OPEN_PLATFORM":   "{Your API key here}"
+    } 
 
 ## Available Scripts
 
