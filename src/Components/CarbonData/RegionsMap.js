@@ -2,6 +2,7 @@ import React from 'react';
 import Headlines from '../Headlines/Headlines';
 import PiechartLine from '../Piechart/PiechartLine';
 import { RegionHeader, Region } from './Region';
+import WeatherOverlay from './WeatherOverlay';
 
 class RegionPolygon extends React.Component {
   constructor(props) {
@@ -81,13 +82,13 @@ function RegionsMap(props) {
           xmlns="http://www.w3.org/2000/svg"
           className="regionMap"
         >
+          <WeatherOverlay weatherImg={props.weatherImg}/>
           <Headlines newsArticles={props.newsArticles} />
           <polygon
             className="no-data"
             stroke="rgba(15,110, 205,.4)"
             points="92.8 302.2 141.4 299.4 154.5 284.4 135.8 279.7 146 265.7 145.1 253.6 184.4 236.7 199.3 246.1 215.2 244.2 225.5 246.1 248.9 293.7 216.2 320.9 225.5 359.2 214.3 418.1 177.8 421.8 152.6 440.5 112.4 454.5 99.3 453.6 78.7 431.2 97.4 420.9 77.8 419 89 408.7 102.1 409.7 112.4 392.8 98.4 394.7 116.1 368.5 130.2 360.1 107.7 361.1 90 347 100.2 328.3 87.1 320.9"
           />
-
           {props.regions.map(region => (
             <RegionPolygon
               key={region.regionid}

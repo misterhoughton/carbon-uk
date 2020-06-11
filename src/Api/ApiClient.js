@@ -31,10 +31,40 @@ function ApiClient() {
       ).then(response => {
         return response.json();
       });
+    },
+    getWeather = function() {
+      const params = new URLSearchParams({
+        'key': APIKEYS.MET_OFFICE_DATAPOINT
+      }),
+      searchParams = new URLSearchParams(params);
+
+      return fetch(
+        `http://datapoint.metoffice.gov.uk/public/data/layer/wxfcs/all/json/capabilities?${searchParams}`,
+        {}
+      ).then(response => {
+        return response.json();
+      }).then(body => {
+        const layerName = 'Temperature',
+              imageFormat = 'png',
+              defaultTime = '2020-06-07T15:00:00',
+              timeStep = '0';
+
+        let baseUrl = body.Layers.BaseUrl.$;
+
+        baseUrl = baseUrl.replace('{LayerName}', layerName);
+        baseUrl = baseUrl.replace('{ImageFormat}', imageFormat);
+        baseUrl = baseUrl.replace('{DefaultTime}', defaultTime);
+        baseUrl = baseUrl.replace('{Timestep}', timeStep);
+        baseUrl = baseUrl.replace('{key}', APIKEYS.MET_OFFICE_DATAPOINT);
+
+        return baseUrl;
+      });
     };
+
   return {
     getCarbonIntensity: getCarbonIntensity,
     getNews: getNews,
+    getWeather: getWeather,
   };
 }
 

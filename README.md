@@ -8,10 +8,17 @@ Built with [React](https://reactjs.org/) and [UIKit](https://getuikit.com/). Boo
 
 ## API Keys
 
-To run this project, you'll need to obtain an API key from [The Guardian Open Platform](https://open-platform.theguardian.com/). Create a JSON file: `src/Api/ApiKeys.json` which contains the following:
+To run this project, you'll need to obtain an API key from:
+ * [The Guardian Open Platform](https://open-platform.theguardian.com/)
+ * [Met Office DataPoint](https://www.metoffice.gov.uk/services/data/datapoint/)
+ 
+ Free developer access is available for all APIs used in this project.
+ 
+ Create a JSON file: `src/Api/ApiKeys.json` which contains the following:
     
     {
-    "GUARDIAN_OPEN_PLATFORM":   "{Your API key here}"
+    "GUARDIAN_OPEN_PLATFORM": "{Your API key here}",
+    "MET_OFFICE_DATAPOINT": "{Your API key here}"
     } 
 
 ## Available Scripts

@@ -28,6 +28,9 @@ class App extends React.Component {
         generationmix: [],
         intensity: {},
       },
+      weatherImg: '',
+      dateFrom: '',
+      dateTo: '',
       newsArticles: [],
     };
     this.dateSlider.handleChange = this.dateSlider.handleChange.bind(this);
@@ -50,6 +53,11 @@ class App extends React.Component {
           dateFrom = selectedDate.format(dateFormat),
           dateTo = selectedDate.add(1, 'days').format(dateFormat);
 
+          this.setState({
+            dateFrom: dateFrom,
+            dateTo: dateTo
+          });
+  
         apiClient
           .getCarbonIntensity(dateFrom, dateTo)
           .then(body => {
@@ -65,6 +73,12 @@ class App extends React.Component {
             this.setState({
               newsArticles: body.response.results || [],
             });
+            return apiClient.getWeather();
+          })
+          .then(body => {
+            this.setState({
+              weatherImg: body,
+            });
           })
           .catch(error => {
             if (error.hasOwnProperty('error')) {
@@ -78,8 +92,8 @@ class App extends React.Component {
             }
             this.setState({
               alert: {
-                code: 'Nope',
-                message: `Not happening. Don't give up`,
+                code: error.stack,
+                message: error.message,
               },
             });
           });
@@ -117,8 +131,11 @@ class App extends React.Component {
         <RegionsMap
           setSelectedRegion={this.setSelectedRegion}
           selectedRegion={this.state.selectedRegion}
+          weatherImg = {this.state.weatherImg}
           regions={this.state.regionsData.regions}
           newsArticles={this.state.newsArticles}
+          dateFrom={this.state.dateFrom}
+          dateTo={this.state.dateTo}
         />
       </div>
     );
